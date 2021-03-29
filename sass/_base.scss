@@ -15,6 +15,43 @@ $bp-medium: 36em;
 $bp-small: 25.875em;
 
 
+@font-face {
+    font-family: 'hk_groteskbold';
+    src: url('hkgrotesk-bold-webfont.woff2') format('woff2'),
+         url('hkgrotesk-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hk_groteskmedium';
+    src: url('hkgrotesk-medium-webfont.woff2') format('woff2'),
+         url('hkgrotesk-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hk_groteskregular';
+    src: url('hkgrotesk-regular-webfont.woff2') format('woff2'),
+         url('hkgrotesk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@font-face {
+    font-family: 'hk_grotesksemibold';
+    src: url('hkgrotesk-semibold-webfont.woff2') format('woff2'),
+         url('hkgrotesk-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 @keyframes moveInLeft {
     0% {
         opacity: 0;
@@ -98,6 +135,41 @@ body {
 }
 
  // HEADER SECTION 
+
+ .section__header-cv {
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
+}
+
+.section__header-cv:link,
+.section__header-cv:visited
+ {
+    text-decoration: none;
+    border: 1px solid #FFC57B;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: white;
+    transition: all .2s;
+    position: relative;
+}
+
+.section__header-cv:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(255, 252, 252, 0.2);
+    background-color: $color-darker-orange;
+    border: 1px solid $color-darker-orange;
+    color: $color-dark-blue;
+
+}
+
+.section__header-cv:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(255, 252, 252, 0.2);
+}
+
+
+
 .section__header {
     background-color: #1F2336;
     color: white;
@@ -141,37 +213,16 @@ body {
         font-size: 1.5rem;
     }
 
-    &-nav a {
-        @media only screen and (max-width: $bp-medium) {
-            display: none;
-        }
-    }
-
-    &-nav a:link,
-    &-nav a:visited
-     {
+    &-list ul li a {
         text-decoration: none;
-        border: 1px solid #FFC57B;
-        padding: 1rem 2rem;
-        font-size: 1.5rem;
         color: white;
-        transition: all .2s;
-        position: relative;
+        cursor: pointer;
     }
 
-    &-nav a:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 10px rgba(255, 252, 252, 0.2);
-        background-color: $color-darker-orange;
-        border: 1px solid $color-darker-orange;
-        color: $color-dark-blue;
-    
+    &-list ul li a:hover {
+        color: $color-light-orange;
     }
 
-    &-nav a:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 10px rgba(255, 252, 252, 0.2);
-    }
     
 
 // HERO BOX
@@ -189,6 +240,7 @@ body {
     }
 
     &-hello {
+        
         color: #FFC57B;
         font-size: 4rem;
         background-image: linear-gradient(to right bottom, $color-light-orange, $color-dark-orange, $color-darker-orange);
@@ -209,6 +261,8 @@ body {
     }
 
     &-name {
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
         font-size: 10rem;
         animation-name: moveInLeft;
         animation-duration: 3.5s;
@@ -390,25 +444,38 @@ body {
     border-top-right-radius: 1rem;
     overflow: hidden;
 
+    
+
     &__img-1 {
-        background-image: url(../img/whatsapp-concept.jpg);
+        background-image: url(../img/Nnnnatures-img.png);
         height: 23rem;
         background-size: cover;
         border-radius: 1rem;
+        background-position: center;
     }
 
     &__img-2 {
-        background-image: url(../img/Instagram-Reels-Layouts-Instagram.jpg);
+        background-image: url(../img/trillo-img.png);
         height: 23rem;
         background-size: cover;
         border-radius: 1rem;
+        background-position: center;
     }
 
     &__img-3 {
-        background-image: url(../img/netflix.png);
+        background-image: url(../img/budget-img.png);
         height: 23rem;
         background-size: cover;
         border-radius: 1rem;
+        background-position: center;
+    }
+
+    &__img-4 {
+        background-image: url(../img/Amazon-img.png);
+        height: 23rem;
+        background-size: cover;
+        border-radius: 1rem;
+        background-position: center;
     }
 
     
@@ -537,7 +604,24 @@ body {
     }
 
     &-study-p {
-        color: $color-dark-orange;
+        color: $color-light-orange;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        letter-spacing: -0.01em;
+
+    }
+
+    &-study-title {
+        font-family: 'Playfair Display', serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 27px;
+        letter-spacing: 0.001em;
+        color: #FFFFFF;
+
     }
 }
 
@@ -638,6 +722,10 @@ body {
     padding: 25rem 0;
     background-color: $color-dark-blue;
 
+    & a {
+        text-decoration: none;
+    }
+
     @media only screen and (max-width: $bp-small) {
         
         padding: 20rem 2rem 20rem 2rem ;
@@ -663,6 +751,7 @@ body {
             margin-top: 2rem;
             letter-spacing: -0.01em;
             color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
 
             @media only screen and (max-width: $bp-larger) {
                 font-size: 3rem;
@@ -842,6 +931,12 @@ body {
 
             @media only screen and (max-width: $bp-small) {
                 padding: 1rem 1.8rem;
+            }
+
+            & a {
+                text-decoration: none;
+                color: white;
+                cursor: pointer;
             }
         }
     }
