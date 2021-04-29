@@ -134,7 +134,7 @@ body {
   .section__header-list ul li a:hover {
     color: #FFC57B; }
   .section__header-herobox {
-    padding: 8rem 0; }
+    padding: 18rem 0; }
     @media only screen and (max-width: 25.875em) {
       .section__header-herobox {
         padding-left: 4rem;
